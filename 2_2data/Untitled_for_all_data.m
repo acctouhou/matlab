@@ -12,7 +12,7 @@ for yy=1:100
     end
 end
 local=reshape(local,[n,1]);
-for i=35:35
+for i=1:1
 filename=['Iteration' num2str(i) '.inp']; 
 a=importdata(filename,',',0);
 filename=['Diff_Iteration' num2str(i) '.inp']; 
@@ -130,7 +130,6 @@ view(20,490)
 saveas(gcf,'13.png')
 z_13=reshape(z_13,[n,1]);
 
-
 %*10^6
 z_14=c(1:size_b,3);%Poisson's ratio
 z_14(size_b+1:size_a)=0.3;
@@ -149,8 +148,6 @@ view(20,490)
 saveas(gcf,'15.png')
 z_15=reshape(z_15,[n,1]);
 
-filename=num2str(i); 
-fid =fopen(filename, 'w'); 
 
 
 
@@ -161,6 +158,7 @@ for tt=1:n
     fprintf(fid,'%d %d %d %d %d %d %d %d %d %d %d %d %d %d ',z_1(tt),z_2(tt),z_3(tt),z_4(tt),z_5(tt),z_10(tt),z_11(tt),z_12(tt),z_13(tt),z_14(tt),z_15(tt),local(tt),model,i);
     fprintf(fid,'\n');
 end
+
 end
 
 
